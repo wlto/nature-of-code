@@ -55,7 +55,7 @@ void setup() {
   background(255);
   movers = new Mover[MAX_MOVERS];
   for (int i = 0; i < movers.length; i++) {
-    movers[i] = new Mover(random(10), random(width), random(height));
+    movers[i] = new Mover(random(10), random(width), height/2);
   }
 }
 
@@ -67,7 +67,8 @@ void draw() {
   
   for (int i = 0; i < movers.length; i++) {
     // Width gravity
-    PVector gravity = new PVector(0, 0.2 * movers[i].mass);
+    PVector gravity = new PVector(0, 0.2);
+    gravity.mult(movers[i].mass);
     movers[i].applyForce(gravity);
     
     // With friction
