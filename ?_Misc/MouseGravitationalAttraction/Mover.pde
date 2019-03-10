@@ -5,6 +5,12 @@ class Mover {
   float mass;
   float G;
   
+  float colours[][] = {
+    {255, 116, 119},
+    {0, 116, 162},
+    {95, 130, 137}
+  };
+  
   ArrayList<PVector> history;
   
   Mover(float x_, float y_) {
@@ -39,9 +45,14 @@ class Mover {
   }
   
   void display() {
+    int randomColourIndex = ceil(int(random(2)));
+    
     for (int i = 0, n = history.size(); i < n; i++) {
       if (i < n - 1) {
-        stroke(100, 50);
+        stroke(
+          colours[randomColourIndex][0],
+          colours[randomColourIndex][1],
+          colours[randomColourIndex][2], 50);
         noFill();
         line(
           history.get(i).x,
@@ -53,7 +64,9 @@ class Mover {
     }
     
     noStroke();
-    fill(50, 100);
+    fill(colours[randomColourIndex][0],
+          colours[randomColourIndex][1],
+          colours[randomColourIndex][2], 100);
     ellipse(location.x, location.y, 2, 2);
   }
   
