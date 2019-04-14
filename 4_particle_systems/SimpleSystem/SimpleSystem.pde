@@ -9,11 +9,6 @@ void setup() {
   background(255);
   
   particles = new ArrayList<Particle>();
-  for (int i = 0; i < SIZE; i++) {
-    particles.add(
-      new Particle(new PVector(width/2, height/2))
-    );
-  }
 }
 
 void draw() {
