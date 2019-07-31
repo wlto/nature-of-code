@@ -8,6 +8,3 @@ My implementations of the sketches from The Nature of Code book
 ## Language(s)
 
 - Processing
-
-hello christine
-jwehfiewhfewhluiflewifhewhfiowefw
